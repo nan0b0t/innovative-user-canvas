@@ -28,7 +28,7 @@ const Index: React.FC = () => {
     document.documentElement.classList.toggle('dark-mode', theme === 'dark');
 
     // GSAP ScrollTrigger animations for sections
-    const sections = gsap.utils.toArray('.slide-in-section');
+    const sections = gsap.utils.toArray<HTMLElement>('.slide-in-section');
     
     sections.forEach((section) => {
       gsap.fromTo(
@@ -52,8 +52,8 @@ const Index: React.FC = () => {
     });
 
     // Create batch animations for staggered elements
-    gsap.utils.toArray('.stagger-fade-in').forEach((element) => {
-      const children = gsap.utils.toArray((element as HTMLElement).children);
+    gsap.utils.toArray<HTMLElement>('.stagger-fade-in').forEach((element) => {
+      const children = gsap.utils.toArray<HTMLElement>((element).children);
       
       gsap.fromTo(
         children,
@@ -96,7 +96,7 @@ const Index: React.FC = () => {
       <Footer />
       {/* Theme toggle in bottom-right corner */}
       <div className="fixed bottom-6 right-6 z-50">
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        <ThemeToggle currentTheme={theme} toggleTheme={toggleTheme} />
       </div>
     </div>
   );
