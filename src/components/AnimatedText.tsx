@@ -14,7 +14,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       const [entry] = entries;
-      if (entry.isIntersecting && textRef.current) {
+      if (entry.isIntersecting) {
         gsap.fromTo(
           textRef.current,
           { 
