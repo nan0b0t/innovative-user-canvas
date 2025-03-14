@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -14,14 +13,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-
 const Index: React.FC = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
   };
-  
   useEffect(() => {
     // Apply theme to the document
     document.documentElement.classList.toggle('light-mode', theme === 'light');
@@ -29,51 +25,41 @@ const Index: React.FC = () => {
 
     // GSAP ScrollTrigger animations for sections
     const sections = gsap.utils.toArray('.slide-in-section');
-    
-    sections.forEach((section) => {
-      gsap.fromTo(
-        section,
-        { 
-          opacity: 0,
-          y: 50 
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
+    sections.forEach(section => {
+      gsap.fromTo(section, {
+        opacity: 0,
+        y: 50
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
         }
-      );
+      });
     });
 
     // Create batch animations for staggered elements
-    gsap.utils.toArray('.stagger-fade-in').forEach((element) => {
+    gsap.utils.toArray('.stagger-fade-in').forEach(element => {
       const children = gsap.utils.toArray((element as HTMLElement).children);
-      
-      gsap.fromTo(
-        children,
-        { 
-          opacity: 0, 
-          y: 20 
-        },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.1,
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
+      gsap.fromTo(children, {
+        opacity: 0,
+        y: 20
+      }, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
         }
-      );
+      });
     });
 
     // Clean up all ScrollTrigger instances when component unmounts
@@ -81,9 +67,7 @@ const Index: React.FC = () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, [theme]);
-  
-  return (
-    <div className={`flex flex-col min-h-screen ${theme}`}>
+  return <div className={`flex flex-col min-h-screen ${theme}`}>
       <Navbar />
       <main>
         <HeroSection />
@@ -95,11 +79,7 @@ const Index: React.FC = () => {
       </main>
       <Footer />
       {/* Theme toggle in bottom-right corner */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-      </div>
-    </div>
-  );
+      
+    </div>;
 };
-
 export default Index;
