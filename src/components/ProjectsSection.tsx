@@ -63,7 +63,7 @@ const ProjectsSection: React.FC = () => {
       description: "An interactive platform for a cryptocurrency mentoring service. Utilized React for front-end development and Node.js for back-end, allowing for seamless user interactions and real-time updates.",
       tags: ["React", "Node.js", "API Integration"],
       links: {
-        website: "#",
+        website: "https://10x-mentorship-hub.vercel.app/",
         github: "#",
         demo: "#"
       },

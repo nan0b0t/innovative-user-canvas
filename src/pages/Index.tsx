@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -67,7 +68,9 @@ const Index: React.FC = () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, [theme]);
-  return <div className={`flex flex-col min-h-screen ${theme}`}>
+  
+  return (
+    <div className={`flex flex-col min-h-screen ${theme}`}>
       <Navbar />
       <main>
         <HeroSection />
@@ -79,7 +82,11 @@ const Index: React.FC = () => {
       </main>
       <Footer />
       {/* Theme toggle in bottom-right corner */}
-      
-    </div>;
+      <div className="fixed bottom-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
+    </div>
+  );
 };
+
 export default Index;

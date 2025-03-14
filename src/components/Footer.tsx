@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+
 const Footer: React.FC = () => {
   return <footer className="bg-portfolio-dark border-t border-portfolio-accent/10 py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -12,16 +14,16 @@ const Footer: React.FC = () => {
               Creating beautiful, functional websites and applications with passion and precision.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="GitHub">
+              <a href="https://github.com/yinkscss" target="_blank" rel="noopener noreferrer" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="GitHub">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/olayinkashittu/" target="_blank" rel="noopener noreferrer" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="Twitter">
+              <a href="https://x.com/boysod_" target="_blank" rel="noopener noreferrer" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="mailto:contact@example.com" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="Email">
+              <a href="mailto:olayinkashittu2003@gmail.com" className="text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300" aria-label="Email">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -58,12 +60,10 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="text-portfolio-light/70">Kaduna, Nigeria</li>
               <li>
-                <a href="mailto:contact@example.com" className="text-portfolio-light/70 hover:text-portfolio-accent transition-colors duration-300">olayinkashittu2003@gmail.com</a>
+                <a href="mailto:olayinkashittu2003@gmail.com" className="text-portfolio-light/70 hover:text-portfolio-accent transition-colors duration-300">olayinkashittu2003@gmail.com</a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="text-portfolio-light/70 hover:text-portfolio-accent transition-colors duration-300">+2349121212672
-
-              </a>
+                <a href="tel:+2349121212672" className="text-portfolio-light/70 hover:text-portfolio-accent transition-colors duration-300">+2349121212672</a>
               </li>
             </ul>
           </div>
@@ -78,4 +78,5 @@ const Footer: React.FC = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
