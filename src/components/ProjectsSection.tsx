@@ -34,27 +34,28 @@ const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Move.it - Moving Company",
-      description: "A dynamic and user-friendly website for a moving company. Features an intuitive interface that allows users to easily navigate through services, schedule moves, and access resources related to relocating.",
-      tags: ["React", "Responsive Design", "Interactive UI"],
+      title: "AI Environmental Impact Analyzer",
+      description: "A web-based tool that helps users assess the environmental impact of consumer products by analyzing product descriptions, manufacturing details, and supply chain data, providing an AI-powered sustainability score for informed purchasing decisions.",
+      tags: ["React", "Supabase", "Google Gemini API", "Vercel"],
       links: {
-        website: "#",
-        github: "#",
+        website: "https://ai-ecofootprint.vercel.app",
       },
       caseStudy: {
-        overview: "Move.it needed a website that would simplify the moving process for customers while showcasing their services and expertise in the industry.",
+        overview: "The AI Environmental Impact Analyzer provides users with a sustainability analysis tool to make informed eco-conscious purchasing decisions based on AI-driven insights.",
         challenges: [
-          "Creating an intuitive booking system that captures all necessary information",
-          "Designing a responsive interface that works across all devices",
-          "Implementing a real-time quote calculator with accurate pricing"
+          "Model selection issues when initially using Hugging Face models that lacked accuracy",
+          "API integration errors including version mismatches and missing model endpoints",
+          "Database and UI rendering issues causing incomplete data viewing",
+          "Implementing all necessary pages and user profile systems"
         ],
         solutions: [
-          "Developed a step-by-step booking wizard with progress indicators",
-          "Created a mobile-first design approach with tailored experiences per device",
-          "Built an integrated quote calculator with address validation and distance estimation"
+          "Switched to Google Gemini API for improved accuracy and free-tier analysis capabilities",
+          "Debugged API requests and successfully integrated Gemini for real-time insights",
+          "Fixed database schema, optimized data retrieval, and ensured proper UI updates",
+          "Built all required pages and implemented a structured user profile system"
         ],
-        results: "The new website led to a 45% increase in online bookings and a 30% reduction in customer service calls as users could easily find information and schedule services online.",
-        technologies: ["React", "Node.js", "Google Maps API", "Tailwind CSS"]
+        results: "Successfully deployed a fully functional AI-powered sustainability analysis tool where users can assess the environmental footprint of consumer products in real-time with a scalable platform that allows for future improvements.",
+        technologies: ["React", "Supabase", "Google Gemini API", "Vercel", "Lovable.dev"]
       }
     },
     {
@@ -106,83 +107,7 @@ const ProjectsSection: React.FC = () => {
         results: "The platform has maintained 99.9% uptime while successfully processing hundreds of bookings with zero security incidents. Client satisfaction increased by 35% due to the streamlined booking process.",
         technologies: ["React", "Supabase", "PostgreSQL", "Stripe", "Tailwind CSS"]
       }
-    },
-    {
-      id: 4,
-      title: "E-commerce Platform",
-      description: "A fully responsive e-commerce platform with product filtering, cart functionality, user authentication, and payment processing.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      links: {
-        github: "#",
-        demo: "#"
-      },
-      caseStudy: {
-        overview: "Created a comprehensive e-commerce solution for a boutique retailer looking to expand their online presence with a unique shopping experience.",
-        challenges: [
-          "Implementing a scalable product catalog with complex filtering options",
-          "Creating a seamless checkout process with multiple payment options",
-          "Building a secure user authentication and order history system"
-        ],
-        solutions: [
-          "Developed a database architecture optimized for filtering and search",
-          "Integrated Stripe for payments with custom checkout UI",
-          "Implemented JWT authentication with secure password storage"
-        ],
-        results: "The platform saw a 60% conversion rate increase compared to the client's previous solution, with a 25% reduction in cart abandonment rates.",
-        technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe", "Redux"]
-      }
-    },
-    {
-      id: 5,
-      title: "Weather Forecast App",
-      description: "A weather application that provides real-time forecasts, hourly updates, and 7-day predictions based on location.",
-      tags: ["React", "REST API", "Geolocation", "Charts"],
-      links: {
-        website: "#",
-        github: "#",
-      },
-      caseStudy: {
-        overview: "Developed a weather application that delivers accurate forecasts in an intuitive, visually appealing interface.",
-        challenges: [
-          "Integrating multiple weather data sources for accuracy",
-          "Optimizing for performance with large datasets",
-          "Creating intuitive data visualizations for weather trends"
-        ],
-        solutions: [
-          "Implemented API aggregation for cross-referenced weather data",
-          "Applied data caching and lazy loading techniques",
-          "Used Recharts for custom, responsive weather visualizations"
-        ],
-        results: "The app achieved a 4.8/5 user satisfaction rating with 10,000+ active users, praised particularly for its accuracy and ease of use.",
-        technologies: ["React", "Weather API", "Geolocation API", "Recharts", "PWA"]
-      }
-    },
-    {
-      id: 6,
-      title: "Task Management Dashboard",
-      description: "A comprehensive task management system with drag-and-drop functionality, priority levels, and team collaboration features.",
-      tags: ["TypeScript", "Redux", "Firebase", "Material UI"],
-      links: {
-        website: "#",
-        github: "#",
-        demo: "#"
-      },
-      caseStudy: {
-        overview: "Built a task management solution for teams needing real-time collaboration and progress tracking capabilities.",
-        challenges: [
-          "Creating a real-time collaborative environment",
-          "Designing an intuitive drag-and-drop interface",
-          "Implementing role-based permissions for tasks"
-        ],
-        solutions: [
-          "Used Firebase Realtime Database for instant updates across clients",
-          "Implemented React DnD for smooth drag-and-drop functionality",
-          "Developed a custom permissions system with granular controls"
-        ],
-        results: "Teams reported a 40% increase in productivity after adoption, with particularly positive feedback on the real-time collaboration features.",
-        technologies: ["TypeScript", "React", "Redux", "Firebase", "React DnD"]
-      }
-    },
+    }
   ];
 
   return (
