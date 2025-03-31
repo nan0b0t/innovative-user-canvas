@@ -60,7 +60,7 @@ export const projects: Project[] = [
     description: "A full-stack web application with a visually appealing design created with React for the front-end, while implementing Supabase for robust back-end infrastructure to manage user data and ensure security.",
     tags: ["React", "Supabase", "Full-Stack"],
     links: {
-      website: "https://seventhveile.com",
+      website: "https://www.seventhveilescortservice.pro/",
     },
     caseStudy: {
       overview: "Seventh Veile needed a secure, elegant platform to showcase their services while maintaining user privacy and facilitating bookings.",
