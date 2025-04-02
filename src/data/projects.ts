@@ -4,6 +4,34 @@ import { Project } from '@/types';
 export const projects: Project[] = [
   {
     id: 1,
+    title: "RentEase",
+    description: "A full-stack web application designed to address landlord-tenant disputes in Nigeria by leveraging AI trained in Nigerian Tenancy Law, a legal consultation booking system, and automated rent/property management features.",
+    tags: ["React", "Node.js", "AI Integration", "Tailwind CSS", "PostgreSQL"],
+    links: {
+      website: "https://rentease.lovable.app/",
+    },
+    caseStudy: {
+      overview: "RentEase is a scalable, secure, and AI-driven platform that simplifies tenancy management in Nigeria by integrating AI-powered legal insights, dispute resolution, and financial tools.",
+      challenges: [
+        "Lack of structured legal datasets for Nigerian tenancy laws",
+        "Handling complex legal queries with appropriate accuracy",
+        "Building a scalable architecture to handle growing user base",
+        "Ensuring payment reliability in the Nigerian financial ecosystem",
+        "Establishing user trust in AI-generated legal advice"
+      ],
+      solutions: [
+        "Partnered with Nigerian legal experts and used AI fine-tuning with tenancy laws",
+        "Implemented GPT-powered NLP with prompt engineering for better accuracy",
+        "Used microservices architecture with NestJS for modular functionality",
+        "Integrated Flutterwave/Paystack with failover handling and real-time notifications",
+        "Combined AI-generated suggestions with real lawyer consultation options"
+      ],
+      results: "Successfully deployed a comprehensive platform that provides a one-stop solution for tenants and landlords, featuring robust backend architecture, secure authentication, and a user-friendly UI that demonstrates how legal tech can drive real-world impact in emerging markets.",
+      technologies: ["React.js", "Tailwind CSS", "Node.js", "NestJS", "PostgreSQL", "OpenAI API", "JWT Authentication", "Flutterwave/Paystack", "Vercel", "GitHub Actions"]
+    }
+  },
+  {
+    id: 2,
     title: "AI Environmental Impact Analyzer",
     description: "A web-based tool that helps users assess the environmental impact of consumer products by analyzing product descriptions, manufacturing details, and supply chain data, providing an AI-powered sustainability score for informed purchasing decisions.",
     tags: ["React", "Supabase", "Google Gemini API", "Vercel"],
@@ -29,7 +57,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "GC Mentorship Platform",
     description: "An interactive platform for a cryptocurrency mentoring service. Utilized React for front-end development and Node.js for back-end, allowing for seamless user interactions and real-time updates.",
     tags: ["React", "Node.js", "API Integration"],
@@ -55,7 +83,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "Seventh Veile Escort Service",
     description: "A full-stack web application with a visually appealing design created with React for the front-end, while implementing Supabase for robust back-end infrastructure to manage user data and ensure security.",
     tags: ["React", "Supabase", "Full-Stack"],
