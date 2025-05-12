@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-portfolio-accent/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-portfolio-light/60 text-sm">
-            © {new Date().getFullYear()} Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Olayinka. All rights reserved.
           </p>
           
         </div>
