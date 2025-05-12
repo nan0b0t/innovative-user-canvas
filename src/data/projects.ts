@@ -4,6 +4,34 @@ import { Project } from '@/types';
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Izenergy",
+    description: "A comprehensive e-commerce platform focused on renewable energy products and solutions, primarily targeting the Nigerian market, providing solar panels, batteries, inverters, power stations, lighting, and accessories to individuals and businesses seeking sustainable energy alternatives.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Paystack"],
+    links: {
+      website: "https://myizenergy.com",
+    },
+    caseStudy: {
+      overview: "Izenergy is a comprehensive e-commerce platform focused on renewable energy products and solutions, primarily targeting the Nigerian market, providing both B2C and B2B solutions for sustainable energy alternatives.",
+      challenges: [
+        "Complex product data structure requiring clear presentation for technical and non-technical users",
+        "Location-specific pricing and availability varying by region within Nigeria",
+        "Customers needing education about solar products before making purchase decisions",
+        "Payment processing reliability issues due to infrastructure limitations",
+        "Performance optimization for loading large product catalogs with images"
+      ],
+      solutions: [
+        "Implemented a flexible product schema with standardized specifications and visual data representation",
+        "Built a location-aware pricing system with region-specific shipping calculations",
+        "Developed an educational 'Academy' section with tutorials, guides, and a custom Solar Calculator",
+        "Added retry logic for failed payments and robust error handling with user-friendly messages",
+        "Implemented lazy loading, pagination, and caching layer for optimized performance"
+      ],
+      results: "The platform has served 15,000+ customers since launch, with significant reduction in customer acquisition costs compared to physical stores, increased average order value through product recommendations, and improved customer education leading to higher conversion rates.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix UI", "React Context API", "React Query", "Supabase", "Paystack", "Recharts", "React Hook Form", "Zod"]
+    }
+  },
+  {
+    id: 2,
     title: "RentEase",
     description: "A full-stack web application designed to address landlord-tenant disputes in Nigeria by leveraging AI trained in Nigerian Tenancy Law, a legal consultation booking system, and automated rent/property management features.",
     tags: ["React", "Node.js", "AI Integration", "Tailwind CSS", "PostgreSQL"],
@@ -31,7 +59,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "AI Environmental Impact Analyzer",
     description: "A web-based tool that helps users assess the environmental impact of consumer products by analyzing product descriptions, manufacturing details, and supply chain data, providing an AI-powered sustainability score for informed purchasing decisions.",
     tags: ["React", "Supabase", "Google Gemini API", "Vercel"],
@@ -57,7 +85,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "GC Mentorship Platform",
     description: "An interactive platform for a cryptocurrency mentoring service. Utilized React for front-end development and Node.js for back-end, allowing for seamless user interactions and real-time updates.",
     tags: ["React", "Node.js", "API Integration"],
@@ -83,7 +111,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "Seventh Veile Escort Service",
     description: "A full-stack web application with a visually appealing design created with React for the front-end, while implementing Supabase for robust back-end infrastructure to manage user data and ensure security.",
     tags: ["React", "Supabase", "Full-Stack"],

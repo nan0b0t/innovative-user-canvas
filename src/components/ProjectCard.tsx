@@ -1,15 +1,16 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { Project } from '@/types';
-import { Globe, Github, ExternalLink, X } from 'lucide-react';
+import { Globe, Github, ExternalLink, X, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
   project: Project;
   index: number;
+  featured?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, featured = false }) => {
   const [showCaseStudy, setShowCaseStudy] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   
@@ -42,10 +43,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     <>
       <div 
         ref={cardRef}
-        className="project-card glass-card rounded-2xl overflow-hidden opacity-0 h-full group"
+        className={cn(
+          "project-card glass-card rounded-2xl overflow-hidden opacity-0 h-full group",
+          featured && "gradient-border lg:col-span-2"
+        )}
       >
-        <div className="p-6 md:p-8 h-full flex flex-col">
-          <h3 className="text-xl md:text-2xl font-bold mb-3">{project.title}</h3>
+        <div className={cn(
+          "p-6 md:p-8 h-full flex flex-col",
+          featured && "gradient-border-content"
+        )}>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className={cn(
+              "text-xl md:text-2xl font-bold",
+              featured && "text-2xl md:text-3xl text-gradient"
+            )}>
+              {project.title}
+            </h3>
+            {featured && (
+              <span className="flex items-center text-portfolio-accent text-sm">
+                <Star className="w-4 h-4 mr-1 fill-portfolio-accent text-portfolio-accent" />
+                Featured
+              </span>
+            )}
+          </div>
           
           <p className="text-portfolio-light/70 mb-6 flex-grow">{project.description}</p>
           
@@ -54,7 +74,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               {project.tags.map((tag, i) => (
                 <span 
                   key={i} 
-                  className="px-3 py-1 bg-portfolio-accent/20 text-portfolio-light/90 rounded-full text-xs"
+                  className={cn(
+                    "px-3 py-1 rounded-full text-xs",
+                    featured 
+                      ? "bg-portfolio-accent/30 text-portfolio-light" 
+                      : "bg-portfolio-accent/20 text-portfolio-light/90"
+                  )}
                 >
                   {tag}
                 </span>
@@ -103,7 +128,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               {project.caseStudy && (
                 <button
                   onClick={() => setShowCaseStudy(true)}
-                  className="px-4 py-2 bg-portfolio-accent/20 hover:bg-portfolio-accent/30 text-portfolio-light rounded-full text-sm transition-colors duration-300"
+                  className={cn(
+                    "px-4 py-2 rounded-full text-sm transition-colors duration-300",
+                    featured 
+                      ? "bg-portfolio-accent hover:bg-portfolio-accent/90 text-white" 
+                      : "bg-portfolio-accent/20 hover:bg-portfolio-accent/30 text-portfolio-light"
+                  )}
                 >
                   Case Study
                 </button>
