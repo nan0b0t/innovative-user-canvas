@@ -61,6 +61,38 @@ const Index: React.FC = () => {
       }
     });
 
+    // Animation for geometric patterns
+    gsap.utils.toArray<HTMLElement>('.geometric-mesh').forEach(pattern => {
+      gsap.fromTo(pattern, 
+        { opacity: 0 },
+        { 
+          opacity: 0.3, 
+          duration: 2,
+          scrollTrigger: {
+            trigger: pattern.parentElement,
+            start: "top bottom",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+
+    // Animation for dot patterns
+    gsap.utils.toArray<HTMLElement>('.dot-pattern').forEach(pattern => {
+      gsap.fromTo(pattern, 
+        { opacity: 0 },
+        { 
+          opacity: 0.2, 
+          duration: 2,
+          scrollTrigger: {
+            trigger: pattern.parentElement,
+            start: "top bottom",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+
     // Clean up all ScrollTrigger instances when component unmounts
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -79,7 +111,6 @@ const Index: React.FC = () => {
         <ContactSection />
       </main>
       <Footer />
-      {/* Theme toggle removed */}
     </div>
   );
 };

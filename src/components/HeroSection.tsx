@@ -1,7 +1,9 @@
+
 import React, { useRef, useEffect } from 'react';
-import { ArrowDown, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import AnimatedText from './AnimatedText';
 import gsap from 'gsap';
+
 const HeroSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -9,6 +11,7 @@ const HeroSection: React.FC = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLAnchorElement>(null);
+  
   useEffect(() => {
     // Initial animations when component mounts
     const tl = gsap.timeline({
@@ -16,6 +19,7 @@ const HeroSection: React.FC = () => {
         ease: "power3.out"
       }
     });
+    
     tl.fromTo(welcomeRef.current, {
       opacity: 0,
       y: 30
@@ -63,31 +67,63 @@ const HeroSection: React.FC = () => {
       }
     }, "-=0.3");
 
+    // Animate the background patterns
+    gsap.fromTo('.hero-pattern', 
+      { opacity: 0 },
+      { opacity: 0.7, duration: 2, ease: 'power1.inOut' }
+    );
+    
     // Parallax effect on scroll
     if (sectionRef.current && imageRef.current) {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
         const sectionTop = sectionRef.current?.offsetTop || 0;
         const scrollRelative = scrollPosition - sectionTop;
+        
         if (scrollRelative > -500 && scrollRelative < 500) {
           gsap.to(imageRef.current, {
             y: scrollRelative * 0.1,
             duration: 0.5,
             ease: "power1.out"
           });
+          
+          // Parallax for background patterns
+          gsap.to('.hero-pattern-1', {
+            y: scrollRelative * 0.03,
+            x: scrollRelative * 0.02,
+            duration: 0.5,
+          });
+          
+          gsap.to('.hero-pattern-2', {
+            y: -scrollRelative * 0.05,
+            x: -scrollRelative * 0.01,
+            duration: 0.5,
+          });
         }
       };
+      
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, []);
-  return <section id="home" ref={sectionRef} className="min-h-screen flex items-center py-20 px-6 md:px-12 relative overflow-hidden">
+
+  return (
+    <section 
+      id="home" 
+      ref={sectionRef} 
+      className="min-h-screen flex items-center py-20 px-6 md:px-12 relative overflow-hidden"
+    >
+      {/* Sophisticated background patterns */}
       <div className="absolute inset-0 bg-gradient-radial from-portfolio-card/50 to-portfolio-dark z-0"></div>
+      
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-portfolio-accent/5 blur-[100px] hero-pattern hero-pattern-1"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-portfolio-highlight/5 blur-[120px] hero-pattern hero-pattern-2"></div>
+      
+      <div className="geometric-mesh opacity-20 hero-pattern"></div>
+      <div className="dot-pattern opacity-20 hero-pattern"></div>
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="flex flex-col space-y-6">
-          
-          
           <div className="space-y-2">
             <AnimatedText text="Hello, I'm a" className="text-lg md:text-xl text-portfolio-light/80" delay={0.2} />
             <AnimatedText text="Web Developer" className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient" delay={0.3} />
@@ -99,8 +135,10 @@ const HeroSection: React.FC = () => {
           </p>
           
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 opacity-0">
-            <a href="#projects" className="px-6 py-3 bg-portfolio-accent hover:bg-portfolio-accent/90 text-white rounded-full transition-colors duration-300 text-center hover-glow">
-              View My Work
+            <a href="#projects" className="gradient-border">
+              <div className="px-6 py-3 bg-portfolio-accent hover:bg-portfolio-accent/90 text-white rounded-full transition-colors duration-300 text-center hover-glow">
+                View My Work
+              </div>
             </a>
             <a href="#contact" className="px-6 py-3 bg-transparent border border-portfolio-accent/50 hover:border-portfolio-accent text-portfolio-light rounded-full transition-colors duration-300 text-center hover-glow">
               Contact Me
@@ -110,15 +148,27 @@ const HeroSection: React.FC = () => {
         
         <div className="flex justify-center">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-portfolio-accent/40 to-portfolio-dark/40 rounded-full blur-3xl opacity-30"></div>
-            <img ref={imageRef} alt="Developer" src="/lovable-uploads/92cfdc1b-d5d3-473a-817a-5e947ba98c9d.png" className="relative z-10 opacity-0 max-w-md lg:max-w-lg xl:max-w-xl object-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-portfolio-accent/40 to-portfolio-dark/40 rounded-full blur-3xl opacity-30 animate-pulse-subtle"></div>
+            <img 
+              ref={imageRef} 
+              alt="Developer" 
+              src="/lovable-uploads/92cfdc1b-d5d3-473a-817a-5e947ba98c9d.png" 
+              className="relative z-10 opacity-0 max-w-md lg:max-w-lg xl:max-w-xl object-none animate-float-slow" 
+            />
           </div>
         </div>
       </div>
       
-      <a ref={scrollRef} href="#projects" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300 opacity-0" aria-label="Scroll to projects">
+      <a 
+        ref={scrollRef} 
+        href="#projects" 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-portfolio-light/60 hover:text-portfolio-accent transition-colors duration-300 opacity-0" 
+        aria-label="Scroll to projects"
+      >
         <ChevronDown className="w-8 h-8" />
       </a>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
