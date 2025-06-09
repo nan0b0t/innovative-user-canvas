@@ -1,4 +1,3 @@
-
 import { Project } from '@/types';
 
 export const projects: Project[] = [
@@ -32,6 +31,34 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Baaba.ng",
+    description: "A modern real estate platform revolutionizing property rental in Nigeria, connecting property owners with potential tenants through an intuitive booking system, comprehensive property listings, virtual tours, and streamlined rental processes.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Real Estate", "Booking System"],
+    links: {
+      website: "https://melodic-kashata-b436c1.netlify.app/",
+    },
+    caseStudy: {
+      overview: "Baaba.ng is a comprehensive real estate startup focused on simplifying property rental processes in Nigeria, offering a modern platform that bridges the gap between property owners and tenants through technology.",
+      challenges: [
+        "Fragmented real estate market with limited digital presence",
+        "Lack of trust between property owners and potential tenants",
+        "Complex property verification and documentation processes",
+        "Inefficient traditional property viewing and booking methods",
+        "Payment security and transaction transparency issues"
+      ],
+      solutions: [
+        "Built a comprehensive property listing platform with detailed property information and high-quality images",
+        "Implemented user verification systems for both property owners and tenants",
+        "Created virtual tour capabilities to reduce unnecessary physical visits",
+        "Developed a secure booking system with escrow-like payment protection",
+        "Added review and rating systems to build community trust"
+      ],
+      results: "Successfully launched a user-friendly platform that streamlines the property rental process, reduces time-to-rent for property owners, and provides tenants with a transparent, secure way to find and book properties.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Netlify", "Modern UI/UX", "Responsive Design"]
+    }
+  },
+  {
+    id: 3,
     title: "RentEase",
     description: "A full-stack web application designed to address landlord-tenant disputes in Nigeria by leveraging AI trained in Nigerian Tenancy Law, a legal consultation booking system, and automated rent/property management features.",
     tags: ["React", "Node.js", "AI Integration", "Tailwind CSS", "PostgreSQL"],
@@ -59,7 +86,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: "AI Environmental Impact Analyzer",
     description: "A web-based tool that helps users assess the environmental impact of consumer products by analyzing product descriptions, manufacturing details, and supply chain data, providing an AI-powered sustainability score for informed purchasing decisions.",
     tags: ["React", "Supabase", "Google Gemini API", "Vercel"],
@@ -85,7 +112,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "GC Mentorship Platform",
     description: "An interactive platform for a cryptocurrency mentoring service. Utilized React for front-end development and Node.js for back-end, allowing for seamless user interactions and real-time updates.",
     tags: ["React", "Node.js", "API Integration"],
@@ -111,7 +138,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: "Seventh Veile Escort Service",
     description: "A full-stack web application with a visually appealing design created with React for the front-end, while implementing Supabase for robust back-end infrastructure to manage user data and ensure security.",
     tags: ["React", "Supabase", "Full-Stack"],

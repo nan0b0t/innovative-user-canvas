@@ -15,7 +15,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
           key={project.id} 
           project={project} 
           index={index} 
-          featured={index === 0} // Mark first project (Izenergy) as featured
+          featured={index === 0 || index === 1} // Mark first two projects (Izenergy and Baaba.ng) as featured
         />
       ))}
     </div>
